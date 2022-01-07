@@ -1,0 +1,33 @@
+<section class="related-portfolio" *ngFor="let portfolio of portfoliodetails">
+    <div class="related-portfolio__bg" [style.background-image]="'url(assets/images/backgrounds/feature-v1-bg.png)'"></div>
+    <!-- /.related-portfolio__bg -->
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Related Case</h4><span class="right"></span>
+            </div>
+            <h2 class="section-title__title">We’re Committed to Creating <br> Change That Matters</h2>
+        </div>
+        <swiper class="thm-swiper__slider" [config]="settings">
+            <div class="swiper-wrapper">
+                <!--Start Case Studies One Single-->
+                <div class="swiper-slide" *ngFor="let item of getPortfolioByCategory(portfolio.category)">
+                    <div class="case-studies-one__single">
+                        <div class="case-studies-one__single-img">
+                            <img [src]="item.image" [alt]="item.title" />
+                            <div class="overly-text">
+                                <h3><a routerLink="/portfolio-details/{{item.id}}">{{item.title}}</a></h3>
+                                <p>{{item.shorttext}}</p>
+                            </div>
+                            <div class="overly-btn">
+                                <a routerLink="/portfolio-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Case Studies One Single-->
+            </div>
+        </swiper><!-- /.swiper-wrapper -->
+    </div><!-- /.container -->
+</section>

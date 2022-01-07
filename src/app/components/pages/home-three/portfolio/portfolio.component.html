@@ -1,0 +1,63 @@
+<section class="case-studies-two" [style.background-image]="'url(assets/images/backgrounds/case-studies-two-bg.png)'">
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Case Studies</h4><span class="right"></span>
+            </div>
+            <h2 class="section-title__title">We’re Committed to Creating <br>Change That Matters</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="case-studies-two__wrapper">
+                    <div class="row">
+                        <!--Start Single Case Studies Two-->
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" *ngFor="let item of portfolioblock | slice:0:1">
+                            <div class="case-studies-two__single">
+                                <div class="case-studies-two__single-text-box">
+                                    <div class="case-studies-two__single-left">
+                                        <h2>{{item.title}}</h2>
+                                        <p>{{item.shorttext}}</p>
+                                    </div>
+                                    <div class="case-studies-two__single-right">
+                                        <div class="case-studies-two__single-right-btn">
+                                            <a routerLink="/portfolio-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-studies-two__single-img">
+                                    <img src="assets/images/resources/case-studies-v2-img1.jpg" [alt]="item.title" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Case Studies Two-->
+                        <!--Start Single Case Studies Two-->
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" *ngFor="let item of portfolioblock | slice:1:2">
+                            <div class="case-studies-two__single">
+                                <div class="case-studies-two__single-text-box style2" [style.background-image]="'url(assets/images/backgrounds/case-studies-two-single-bg.png)'">
+                                    <div class="case-studies-two__single-left">
+                                        <h2 class="padding-top3">{{item.title}}</h2>
+                                        <p>Quis autem vel eumure reprehenderit quinea voluptate velit esse nihil
+                                            molestiae consequatur vel illum qui dolorem eumies</p>
+                                    </div>
+                                    <div class="case-studies-two__single-right">
+                                        <div class="case-studies-two__single-right-btn">
+                                            <a routerLink="/portfolio-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="case-studies-two__single-img">
+                                    <img src="assets/images/resources/case-studies-v2-img2.jpg" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Case Studies Two-->
+                    </div>
+                    <div class="case-studies-two__btn">
+                        <a routerLink="/portfolio-grid" class="thm-btn">View More Case<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

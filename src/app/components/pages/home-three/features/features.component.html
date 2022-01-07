@@ -1,0 +1,48 @@
+<section class="features-four">
+    <div class="container">
+        <div class="row">
+            <!--Start Features Four Left-->
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="features-four__left">
+                    <div class="features-four__left-bg" [style.background-image]="'url(assets/images/backgrounds/feature-v4-bg.png)'"></div>
+                    <div class="section-title">
+                        <div class="section-title__tagline">
+                            <span class="left"></span>
+                            <h4>How Can Help You</h4>
+                        </div>
+                        <h2 class="section-title__title">We Make Your<br>Agency Are<br>Full Bright</h2>
+                    </div>
+                    <div class="features-four__left-bottom">
+                        <p class="features-four__left-text">Sed ut perspiciatis unde omnis iste natus <br>error
+                            sit voluptem accusantiu dolorem ulau<br>dantium totam rem aperiam</p>
+                        <div class="features-four__left-btn">
+                            <a routerLink="/about" class="thm-btn">Learn More<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Features Four Left-->
+            <!--Start Features Four Right-->
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="features-four__right">
+                    <ul class="list-unstyled">
+                        <!-- Data -->
+                        <li class="features-four__right-single" *ngFor="let item of serviceblock | slice:0:3">
+                            <div class="features-four__right-single-inner">
+                                <div class="icon">
+                                    <img [src]="item.icon" [alt]="item.title" />
+                                </div>
+                                <div class="title">
+                                    <h4><a routerLink="/service-details/{{item.id}}">{{item.title}}</a></h4>
+                                    <p>{{item.shorttext | slice:0:60}}</p>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Data -->
+                    </ul>
+                </div>
+            </div>
+            <!--End Features Four Right-->
+        </div>
+    </div>
+</section>

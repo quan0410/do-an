@@ -1,0 +1,30 @@
+<section class="blog-one">
+    <div class="container">
+        <div class="row">
+            <!--Start Single Blog One-->
+            <div class="col-lg-4" *ngFor="let item of blogpost | paginate: { itemsPerPage: 6, currentPage: page }">
+                <div class="blog-one__single">
+                    <div class="blog-one__single-img">
+                        <img [src]="item.image[0]" [alt]="item.title" /> 
+                        <div class="overlay-icon">
+                            <a routerLink="/blog-details/{{item.id}}"><span class="icon-plus"></span></a>
+                        </div>
+                    </div>
+                    <div class="blog-one__single-text-box">
+                        <h3 class="blog-one__single-title"><a routerLink="/blog-details/{{item.id}}">{{item.title}}</a></h3>
+                        <p class="blog-one__single-text">{{item.shorttext | slice:0:60}}</p>
+                        <ul class="blog-one__meta-info list-unstyled">
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i>{{item.postdate}}</li>
+                            <li><i class="fa fa-comments" aria-hidden="true"></i><a routerLink="/blog-details/{{item.id}}">Com ({{item.reviews.length}})</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Blog One-->
+        </div>
+        <!-- Pagination Start -->
+        <pagination-controls (pageChange)="page = $event" responsive="true" previousLabel="<" nextLabel=">">
+        </pagination-controls>
+        <!-- Pagination End -->
+    </div>
+</section>

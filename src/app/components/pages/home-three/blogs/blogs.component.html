@@ -1,0 +1,28 @@
+<section class="blog-two">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Blog & News</h4><span class="right"></span>
+            </div>
+            <h2 class="section-title__title">Trending Business Consulting<br>Article & Tips</h2>
+        </div>
+        <div class="row">
+            <!--Start Single Blog One-->
+            <div class="col-xl-4 col-lg-4 col-md-12" *ngFor="let item of getRecentPost()">
+                <div class="blog-two__single">
+                    <div class="blog-two__single-bg-layer" [style.background-image]="'url('+item.image[0]+')'"></div>
+                    <div class="blog-two__single-text-box">
+                        <h3 class="blog-two__single-title"><a routerLink="/blog-details/{{item.id}}">{{item.title}}</a></h3>
+                        <p class="blog-two__single-text">{{item.shorttext | slice:0:60}}</p>
+                        <ul class="blog-two__meta-info list-unstyled">
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i>{{item.postdate}}</li>
+                            <li><i class="fa fa-comments" aria-hidden="true"></i><a routerLink="/blog-details/{{item.id}}">Com ({{item.reviews.length}})</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Blog One-->
+        </div>
+    </div>
+</section>

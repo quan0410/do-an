@@ -1,0 +1,119 @@
+<footer class="footer-one footer-one--footer-three">
+    <div class="footer-two__bg style2" [style.background-image]="'url(assets/images/backgrounds/footer-v3-bg.png)'"></div>
+    <div class="container">
+        <div class="footer-one__top">
+            <div class="row">
+                <!--Start Footer Widget Column-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.1s">
+                    <div class="footer-widget__column footer-widget__about">
+                        <div class="footer-widget__about-logo">
+                            <a routerLink="/"><img src="assets/images/resources/footer-v3-logo.png" alt="img"></a>
+                        </div>
+                        <div class="footer-contact-info">
+                            <p class="footer-contact-info-text">Sed ut perspiciatis unde omnis natus error sit
+                                voluptac usanticm doloremque laudantium</p>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-pin map" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>256 Elizaberth Ave, Brooklyn,<br>CA, 90025</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-letter" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="text">
+                                        <a href="mailto:example@example.com">example@example.com</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-phone-call" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="text">
+                                        <a href="tel:123456789">+012 (345) 678 99</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--End Footer Widget Column-->
+                <!--Start Footer Widget Column-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.3s">
+                    <div class="footer-widget__column footer-widget__company mar-top">
+                        <h3 class="footer-widget__title">Company</h3>
+                        <ul class="footer-widget__company-list list-unstyled">
+                            <li><a routerLink="/about"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About Us</a></li>
+                            <li><a routerLink="/company"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Company History</a></li>
+                            <li><a routerLink="/career"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Need a Career</a></li>
+                            <li><a routerLink="/contact"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Working
+                                    Process</a></li>
+                            <li><a routerLink="/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Blog Post</a></li>
+                            <li><a routerLink="/contact"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Setting &
+                                    Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End Footer Widget Column-->
+                <!--Start Footer Widget Column-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.5s">
+                    <div class="footer-widget__column footer-widget__newsletter mar-top">
+                        <h3 class="footer-widget__title">Newsletter</h3>
+                        <p class="footer-widget__newsletter-text">Quis autem veleum prehendet <br>voluptate
+                            velit esse</p>
+                        <form class="footer-widget__newsletter-form">
+                            <div class="footer-widget__newsletter-input-box">
+                                <input type="email" placeholder="Email address" name="email" required>
+                            </div>
+                            <div class="newsletter__button">
+                                <button type="submit" class="footer-btn"><span class="thm-btn">Subscription<i class="fa fa-angle-double-right" aria-hidden="true"></i></span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--End Footer Widget Column-->
+                <!--Start Footer Widget Column-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.7s">
+                    <div class="footer-widget__column footer-widget__instagram mar-top">
+                        <h3 class="footer-widget__title">Instagram</h3>
+                        <ul class="instagram list-unstyled">
+                            <!-- Data -->
+                            <li *ngFor="let item of instagram | slice:0:6">
+                                <div class="inner">
+                                    <div class="img-box">
+                                        <img [src]="item.image" alt="ig">
+                                        <div class="overlay-content">
+                                            <a class="img-popup" href="#">
+                                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Data -->
+                        </ul>
+                    </div>
+                </div>
+                <!--End Footer Widget Column-->
+            </div>
+        </div>
+        <!--Start Footer One Bottom-->
+        <div class="footer-one__bottom">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="footer-one__bottom-inner">
+                        <div class="footer-one__bottom-text text-center">
+                            <p>&copy;2021 <a href="#">Website</a>. All Rights Reserved, Design By Website</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Footer One Bottom-->
+    </div>
+</footer>
+<app-back-to-top></app-back-to-top>

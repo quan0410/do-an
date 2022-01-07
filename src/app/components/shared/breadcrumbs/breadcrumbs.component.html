@@ -1,0 +1,19 @@
+<breadcrumb #parent>
+    <section class="page-header clearfix"
+        [style.background-image]="'url(assets/images/backgrounds/page-header-bg.jpg)'">
+        <div class="container">
+            <ng-template ngFor let-route [ngForOf]="parent.breadcrumbs">
+                <div class="page-header__inner clearfix">
+                    <h2 class="wow slideInDown animated" data-wow-delay="0.3s" data-wow-duration="1500ms">{{
+                        route.displayName }}</h2>
+                    <ul class="thm-breadcrumb list-unstyled wow slideInUp animated" data-wow-delay="0.3s"
+                        data-wow-duration="1500ms">
+                        <li><a routerLink="/">Home</a></li>
+                        <li><i class="fa fa-angle-double-right" aria-hidden="true"></i></li>
+                        <li>{{ route.displayName }}</li>
+                    </ul>
+                </div>
+            </ng-template>
+        </div>
+    </section>
+</breadcrumb>

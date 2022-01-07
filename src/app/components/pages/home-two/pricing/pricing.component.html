@@ -1,0 +1,52 @@
+<section class="pricing-plan-one clearfix">
+    <div class="pricing-plan-one__left-bg" [style.background-image]="'url(assets/images/backgrounds/pricing-plan-v1-left-bg.png)'"></div>
+    <div class="pricing-plan-one__right-bg" [style.background-image]="'url(assets/images/backgrounds/pricing-plan-v1-right-bg.png)'"></div>
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Our Pricing Plan</h4><span class="right"></span>
+            </div>
+            <h2 class="section-title__title">Smart Pricing Plan For<br>Marketing</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="pricing-plan-one__content">
+                    <div class="shape1 float-bob-y"><img src="assets/images/shapes/thm-shape-6.png" alt="img" />
+                    </div>
+                    <div class="shape2 float-bob-y"><img src="assets/images/shapes/thm-shape-2.png" alt="img" />
+                    </div>
+                    <div class="shape3 zoominout"><img src="assets/images/shapes/thm-shape-7.png" alt="img" />
+                    </div>
+                    <div class="shape4 zoominout"><img src="assets/images/shapes/thm-shape-5.png" alt="img" />
+                    </div>
+                    <div class="row">
+                        <!--Start Single Pricing  Plan One-->
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12" *ngFor="let item of plans;let i = index">
+                            <div class="pricing-plan-one__single" [ngClass]="1+i === 3 ? 'style2':''">
+                                <div class="table-header">
+                                    <div class="table-header__bg" [style.background-image]="'url(assets/images/backgrounds/pricing-plan-v1-bg.png)'">
+                                    </div>
+                                    <p>{{item.title}}</p>
+                                    <h3>{{item.period}}</h3>
+                                    <h2><span class="icon-dollar"></span>{{item.price | number:'1.2-2'}}</h2>
+                                </div>
+                                <div class="table-content">
+                                    <ul class="list-unstyled">
+                                        <!-- Data -->
+                                        <li *ngFor="let include of item.includes">{{include}}</li>
+                                        <!-- Data -->
+                                    </ul>
+                                </div>
+                                <div class="table-footer">
+                                    <a routerLink="/contact" class="thm-btn">Select Plan<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Pricing  Plan One-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

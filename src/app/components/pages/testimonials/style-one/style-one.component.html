@@ -1,0 +1,55 @@
+<section class="testimonial-one testimonial-one--testimonial">
+    <div class="testimonial-one-bg" [style.background-image]="'url(assets/images/backgrounds/testimonial-v1-bg.png)'"></div>
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Our Consultants</h4>
+            </div>
+            <h2 class="section-title__title">What Our Client’s Say<br>About Solutions</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="testimonial-one__content-box">
+                    <div class="testimonial-one__big-title">
+                        <h2>Fedback</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <owl-carousel-o [options]="settings" class="testimonial-one__carousel owl-dot-type1">
+                                <!-- Data -->
+                                <ng-container *ngFor="let item of testimonials">
+                                    <ng-template carouselSlide>
+                                        <!--Start Testimonial One Single-->
+                                        <div class="testimonial-one__single" *ngFor="let author of getAuthor(item.author)">
+                                            <div class="testimonial-one__text-box">
+                                                <div class="testimonial-one__icon">
+                                                    <img src="assets/images/icon/testimonial-v1-icon.png" alt="img" />
+                                                </div>
+                                                <p>{{item.comment}}</p>
+                                                <div class="testimonial-one__text-box-botton">
+                                                    <div class="icon">
+                                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="title">
+                                                        <h3>{{author.name}}</h3>
+                                                        <p>{{author.post}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-one-img">
+                                                <img [src]="author.image" [alt]="author.name" />
+                                            </div>
+                                        </div>
+                                        <!--End Testimonial One Single-->
+                                    </ng-template>
+                                </ng-container>
+                                <!-- Data -->
+                            </owl-carousel-o>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

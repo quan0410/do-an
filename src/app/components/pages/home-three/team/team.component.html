@@ -1,0 +1,41 @@
+<section class="team-two">
+    <div class="team-two__left-bg"><img src="assets/images/backgrounds/team-two-left-bg.png" alt="img" /></div>
+    <div class="team-two__right-bg"><img src="assets/images/backgrounds/team-two-right-bg.png" alt="img" /></div>
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Popular Service</h4><span class="right"></span>
+            </div>
+            <h2 class="section-title__title">Take a Look Our Unmatched<br>Consulting Approach</h2>
+        </div>
+        <div class="row">
+            <!--Start Team One Single-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" *ngFor="let item of teamblock | slice:0:4">
+                <div class="team-two__single">
+                    <div class="team-two__single-img">
+                        <div class="team-two__single-img-box">
+                            <img [src]="item.shapeimg" [alt]="item.name" />
+                        </div>
+                        <div class="icon"><a routerLink="/team-details/{{item.id}}"><i class="fa fa-plus" aria-hidden="true"></i></a></div>
+                        <h2 class="text">Member</h2>
+                    </div>
+                    <div class="team-two__single-title text-center">
+                        <h3><a routerLink="/team-details/{{item.id}}">{{item.name}}</a></h3>
+                        <p>{{item.post}}</p>
+                        <div class="overly">
+                            <ul class="social-icon list-unstyled">
+                                <!-- Data -->
+                                <li *ngFor="let social of item.social">
+                                    <a routerLink="{{social.url}}"><i [class]="social.icon" aria-hidden="true"></i></a>
+                                </li>
+                                <!-- Data -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Team One Single-->
+        </div>
+    </div>
+</section>

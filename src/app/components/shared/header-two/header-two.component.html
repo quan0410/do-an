@@ -1,0 +1,158 @@
+<header class="main-header main-header--two  clearfix">
+    <div class="main-header-two__bottom">
+        <div class="auto-container">
+            <div class="main-header-two__bottom-inner clearfix">
+                <nav class="main-menu main-menu--1">
+                    <!-- menu -->
+                    <div class="main-menu__inner">
+                        <div class="left">
+                            <div class="logo-box2">
+                                <a routerLink="/">
+                                    <img src="assets/images/resources/logo-2.png" alt="img">
+                                </a>
+                            </div>
+                            <a href="javascript:void(0)" class="mobile-nav__toggler" (click)="toggleNav()"><i
+                                    class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li [ngClass]="item.child === true ? 'dropdown' : ''" *ngFor="let item of navigation">
+                                    <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                            class="nav_arrow"></span></a>
+                                    <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                                    <ul class="sub-menu" *ngIf="item.child">
+                                        <li [ngClass]="item.child === true ? 'dropdown' : ''"
+                                            *ngFor="let item of item.submenu">
+                                            <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                                    class="nav_arrow"></span></a>
+                                            <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                                            <ul class="sub-menu" *ngIf="item.child">
+                                                <li *ngFor="let item of item.submenu">
+                                                    <a routerLink="{{item.link}}">{{item.linkText}}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="search-box">
+                                <a href="javascript:void(0)" class="main-menu__search search-toggler icon-search"
+                                    (click)="toggleSearch()">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="main-menu__right">
+                                <div class="language-switcher">
+                                    <div id="polyglotLanguageSwitcher">
+                                        <form>
+                                            <select id="polyglot-language-options">
+                                                <option id="en" value="en" selected>English</option>
+                                                <option id="fr" value="fr">French</option>
+                                                <option id="de" value="de">German</option>
+                                                <option id="it" value="it">Italian</option>
+                                                <option id="es" value="es">Spanish</option>
+                                            </select>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="phone_number">
+                                    <div class="icon">
+                                        <span class="icon-agenda"></span>
+                                    </div>
+                                    <div class="number">
+                                        <p>Phone Us</p>
+                                        <a href="tel:01682648101">+012 (34) 789</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- menu -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="stricky-header stricky-header--style2 stricked-menu main-menu" [ngClass]="windowScrolled ? 'stricky-fixed':''">
+    <div class="sticky-header__content">
+        <!-- menu -->
+        <div class="main-menu__inner">
+            <div class="left">
+                <div class="logo-box2">
+                    <a routerLink="/">
+                        <img src="assets/images/resources/logo-2.png" alt="img">
+                    </a>
+                </div>
+                <a href="javascript:void(0)" class="mobile-nav__toggler" (click)="toggleNav()"><i
+                        class="fa fa-bars"></i></a>
+                <ul class="main-menu__list">
+                    <li [ngClass]="item.child === true ? 'dropdown' : ''" *ngFor="let item of navigation">
+                        <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                class="nav_arrow"></span></a>
+                        <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                        <ul class="sub-menu" *ngIf="item.child">
+                            <li [ngClass]="item.child === true ? 'dropdown' : ''" *ngFor="let item of item.submenu">
+                                <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                        class="nav_arrow"></span></a>
+                                <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                                <ul class="sub-menu" *ngIf="item.child">
+                                    <li *ngFor="let item of item.submenu">
+                                        <a routerLink="{{item.link}}">{{item.linkText}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <a href="javascript:void(0)" class="main-menu__search search-toggler icon-search"
+                        (click)="toggleSearch()">
+                    </a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="main-menu__right">
+                    <div class="language-switcher">
+                        <div id="polyglotLanguageSwitcher">
+                            <form>
+                                <select id="polyglot-language-options">
+                                    <option id="en" value="en" selected>English</option>
+                                    <option id="fr" value="fr">French</option>
+                                    <option id="de" value="de">German</option>
+                                    <option id="it" value="it">Italian</option>
+                                    <option id="es" value="es">Spanish</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="phone_number">
+                        <div class="icon">
+                            <span class="icon-agenda"></span>
+                        </div>
+                        <div class="number">
+                            <p>Phone Us</p>
+                            <a href="tel:01682648101">+012 (34) 789</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu -->
+    </div><!-- /.sticky-header__content -->
+</div><!-- /.stricky-header -->
+<!-- Search --> 
+<div class="search-popup" [ngClass]="searchMethod ? 'active' : ''">
+    <div class="search-popup__overlay search-toggler" (click)="toggleSearch()"></div>
+    <app-search class="search-popup__content"></app-search>
+</div>
+<!-- Search -->
+<!-- Mobilemenu -->
+<div class="mobile-nav__wrapper" [ngClass]="navmethod ? 'expanded' : ''">
+    <div class="mobile-nav__overlay mobile-nav__toggler" (click)="toggleNav()"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler" (click)="toggleNav()"><i class="fa fa-times"></i></span>
+        <app-mobile-menu></app-mobile-menu>
+    </div>
+    <!-- /.mobile-nav__content -->
+</div>
+<!-- Mobilemenu -->

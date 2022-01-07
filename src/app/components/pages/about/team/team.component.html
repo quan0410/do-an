@@ -1,0 +1,54 @@
+<section class="team-one">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Our Consultants</h4>
+            </div>
+            <h2 class="section-title__title">Meet Our Professional<br>Consultants</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="team-one__content-wrapper">
+                    <div class="team-one__big-title">
+                        <h2>Team</h2>
+                    </div>
+                    <div class="row">
+                        <!--Start Single Team One-->
+                        <div class="col-xl-3 col-lg-3 col-md-6" *ngFor="let item of teamblock | slice:0:4">
+                            <div class="team-one__single">
+                                <div class="team-one__single-wrapper">
+                                    <div class="team-one__single-img">
+                                        <img [src]="item.image" [alt]="item.name" />
+                                    </div>
+                                    <div class="team-one__single-title">
+                                        <h4><a routerLink="/team-details/{{item.id}}">{{item.name}}</a></h4>
+                                        <p>{{item.post}}</p>
+                                    </div>
+                                    <div class="team-one__single-title-overly">
+                                        <h4><a routerLink="/team-details/{{item.id}}">{{item.name}}</a></h4>
+                                        <p>{{item.post}}</p>
+                                        <ul class="social-icon list-unstyled">
+                                            <!-- Data -->
+                                            <li *ngFor="let social of item.social">
+                                                <a routerLink="{{social.url}}"><i [class]="social.icon" aria-hidden="true"></i></a>
+                                            </li>
+                                            <!-- Data -->
+                                        </ul>
+                                        <div class="icon">
+                                            <a routerLink="/team-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Team One-->
+                        <div class="team-one__button">
+                            <a routerLink="/team" class="thm-btn team-one__btn">View All Member <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

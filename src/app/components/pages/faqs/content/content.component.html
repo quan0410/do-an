@@ -1,0 +1,52 @@
+<section class="faq-one">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Faq</h4>
+            </div>
+            <h2 class="section-title__title">Frequently Asked<br>Questions</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="faq-one__content-box">
+                    <ngb-accordion [closeOthers]="true" activeIds="static-1-1" class="accrodion-grp"
+                        id="faqAccordions2">
+                        <!--Start Faq One Single-->
+                        <ngb-panel id="static-1-{{1+i}}" *ngFor="let item of faqs;let i = index">
+                            <ng-template ngbPanelTitle>
+                                {{item.title}}
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                <div class="inner">
+                                    {{item.text}}
+                                </div>
+                            </ng-template>
+                        </ngb-panel>
+                        <!-- End Faq One Single-->
+                    </ngb-accordion>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="faq-one__right">
+                    <div class="faq-one__right-img">
+                        <img src="assets/images/resources/faq-v1-img.jpg" alt="img" />
+                        <div class="faq-one__right-img-overlay">
+                            <div class="section-title">
+                                <div class="section-title__tagline">
+                                    <span class="left"></span>
+                                    <h4>Get a Quote</h4><span class="right"></span>
+                                </div>
+                                <h2 class="section-title__title">Get Ready Work<br>Together</h2>
+                            </div>
+                            <div class="faq-one__right-btn">
+                                <a routerLink="/contact" class="thm-btn">Get Free Quote <i
+                                        class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

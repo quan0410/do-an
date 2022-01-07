@@ -1,0 +1,47 @@
+<section class="case-studies-one case-studies-one--portfolio-grid">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Case Studies</h4><span class="right"></span>
+            </div>
+            <h2 class="section-title__title">We’re Committed to Creating<br> Change That Matters</h2>
+        </div>
+        <div class="row">
+            <!--Start case-studies-one Top-->
+            <div class="case-studies-one--portfolio-grid__top">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="case-studies-one--portfolio-grid__menu-box">
+                        <ul class="project-filter clearfix post-filter has-dynamic-filters-counter list-unstyled">
+                            <li [ngClass]="activeItem === 1 ? 'active' : ''" (click)="reset(1)">
+                                <span class="filter-text">Show All</span>
+                            </li>
+                            <li [ngClass]="activeItem === 2+i ? 'active' : ''" *ngFor="let item of categories; let i = index" (click)="filterItemsByCategory(item, 2+i)">
+                                <span class="filter-text">{{item.title}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--End case-studies-one Top-->
+        </div>
+        <div class="row filter-layout masonary-layout">
+            <!--Start Case Studies One Single-->
+            <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let item of filteredItems">
+                <div class="case-studies-one__single">
+                    <div class="case-studies-one__single-img">
+                        <img [src]="item.image" [alt]="item.title" />
+                        <div class="overly-text">
+                            <h3><a routerLink="/portfolio-details/{{item.id}}">{{item.title}}</a></h3>
+                            <p>{{item.shorttext}}</p>
+                        </div>
+                        <div class="overly-btn">
+                            <a routerLink="/portfolio-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Case Studies One Single-->
+        </div>
+    </div>
+</section>

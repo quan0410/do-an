@@ -1,0 +1,26 @@
+<section class="jobs-one" [style.background-image]="'url(assets/images/backgrounds/jobs-one-bg.png)'">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="jobs-one__content-box">
+                    <div class="row">
+                        <!--Start Jobs One Single-->
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" *ngFor="let item of jobs">
+                            <div class="jobs-one__single">
+                                <h3 class="jobs-one__single-title">{{item.title}}<span *ngIf="item.time">({{item.time}})</span></h3>
+                                <p class="jobs-one__single-text">{{item.text}}</p>
+                                <div class="jobs-one__single-btn">
+                                    <a routerLink="/contact" class="thm-btn">Apply Now<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Jobs One Single-->
+                    </div>
+                    <div class="jobs-one__btn text-center">
+                        <a routerLink="/career" class="thm-btn">View More Jobs<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

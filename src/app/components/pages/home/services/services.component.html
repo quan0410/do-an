@@ -1,0 +1,58 @@
+<section class="feauters-two">
+    <div class="feauters-two__bg" [style.background-image]="'url(assets/images/backgrounds/feature-v1-bg.png)'">
+    </div>
+    <div class="container">
+        <div class="section-title">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>How Can Help You</h4>
+            </div>
+            <h2 class="section-title__title">We Make Your Agency<br>Are Full Bright</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="feauters-two__content-box">
+                    <div class="feauters-two__big-title">
+                        <h2>Feature</h2>
+                    </div>
+                    <div class="shape1 zoom-fade">
+                        <img src="assets/images/shapes/feature-v1-shape1.png" alt="img" />
+                    </div>
+                    <div class="shape2 zoom-fade">
+                        <img src="assets/images/shapes/feature-v1-shape2.png" alt="img" />
+                    </div>
+                    <div class="row">
+                        <!--Start Feauters Two Single-->
+                        <div class="col-xl-3 col-lg-3 col-md-6" *ngFor="let item of serviceblock | slice:0:4">
+                            <div class="feauters-two__single wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                <div class="feauters-two__single-inner">
+                                    <div class="img-holder">
+                                        <div class="inner">
+                                            <img [src]="item.image" [alt]="item.title" />
+                                        </div>
+                                    </div>
+                                    <div class="title-holder">
+                                        <h3><a routerLink="/service-details/{{item.id}}">{{item.title}}</a></h3>
+                                        <div class="btn">
+                                            <a routerLink="/service-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="overlay">
+                                        <div class="title">
+                                            <h3><a routerLink="/service-details/{{item.id}}">{{item.title}}</a></h3>
+                                            <p>{{item.shorttext | slice:0:45}}</p>
+                                            <div class="btn">
+                                                <a routerLink="/service-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Feauters Two Single-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

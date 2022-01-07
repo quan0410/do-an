@@ -1,0 +1,57 @@
+<section class="main-slider main-slider-one">
+    <swiper class="thm-swiper__slider" [config]="settings">
+        <div class="swiper-wrapper">
+            <!--Start Single Swiper Slide-->
+            <div class="swiper-slide" *ngFor="let item of banner">
+                <div class="image-layer" [style.background-image]="'url('+item.image+')'">
+                </div>
+                <div class="image-layer-overlay"></div>
+                <!-- /.image-layer -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-slider__content text-center">
+                                <div class="shape1"><img src="assets/images/shapes/main-slider-one-shape1.png"
+                                        [alt]="item.title" /></div>
+                                <div class="section-title">
+                                    <div class="section-title__tagline">
+                                        <span class="left"></span>
+                                        <h4>{{item.subtitle}}</h4><span class="right"></span>
+                                    </div>
+                                    <h2 class="section-title__title" [innerHtml]="item.title"></h2>
+                                </div>
+                                <div class="main-slider__button-box">
+                                    <div class="btns-box">
+                                        <a routerLink="/contact" class="thm-btn">Free Consultation</a>
+                                    </div>
+                                    <div class="banner-video-gallery">
+                                        <div class="video-box">
+                                            <a class="video-popup" title="Video Gallery"
+                                                href="https://www.youtube.com/watch?v=TKnufs85hXk">
+                                                <i class="fa fa-play" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <div class="title-box">
+                                            <h5>Watch Video</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Single Swiper Slide-->
+            <!-- If we need navigation buttons -->
+            <div class="swiper-pagination" id="main-slider-pagination"></div>
+            <div class="main-slider__nav">
+                <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                    <span class="icon-left"></span>
+                </div>
+                <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                    <span class="icon-right"></span>
+                </div>
+            </div>
+        </div>
+    </swiper>
+</section>

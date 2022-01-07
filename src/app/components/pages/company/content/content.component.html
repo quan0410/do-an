@@ -1,0 +1,29 @@
+<section class="history-timeline">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2 class="section-title__title">We're Committed to Build Your <br>Business Growth</h2>
+            <p class="section-title__text">Sed ut perspiciatis unde omnis iste natus error sit voluptem
+                accusantium doloremu<br> laudantium totam aperiam eaque inventore</p>
+        </div>
+        <div class="row">
+            <div class="history-timeline__card">
+                <!-- Data -->
+                <div class="row" *ngFor="let item of history">
+                    <div class="col-xl-6 col-lg-6">
+                        <h2 class="history-timeline__year">{{item.year}}</h2>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="history-timeline__content">
+                            <h2 class="history-timeline__content-title">{{item.title}}</h2>
+                            <p class="history-timeline__content-text">{{item.text}}</p>
+                            <div class="history-timeline__img">
+                                <img [src]="item.image" [alt]="item.title" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Data -->
+            </div>
+        </div>
+    </div>
+</section>

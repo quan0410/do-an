@@ -1,0 +1,71 @@
+<section class="testimonial-two">
+    <div class="container">
+        <div class="row">
+            <!--Start Testimonial Two Left-->
+            <div class="col-xl-6">
+                <div class="testimonial-two__left">
+                    <div class="shape1 float-bob-y"><img src="assets/images/shapes/thm-shape-9.png" alt="img" />
+                    </div>
+                    <div class="shape2 rotate-me"><img src="assets/images/shapes/thm-shape-8.png" alt="img" />
+                    </div>
+                    <div class="shape3 float-bob-y"><img src="assets/images/shapes/thm-shape-5.png" alt="img" />
+                    </div>
+                    <div class="shape4 zoom-fade"><img src="assets/images/shapes/thm-shape-2.png" alt="img" />
+                    </div>
+                    <div class="testimonial-two__img-box">
+                        <div class="testimonial-two__img1 wow slideInLeft" data-wow-delay="500ms"
+                            data-wow-duration="2500ms">
+                            <img src="assets/images/testimonial/testimonial-v2-img1.png" alt="img" />
+                        </div>
+                        <div class="testimonial-two__img2">
+                            <img src="assets/images/testimonial/testimonial-v2-img2.png" alt="img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Testimonial Two Left-->
+            <!--Start Testimonial Two Right-->
+            <div class="col-xl-6">
+                <div class="testimonial-two__right">
+                    <div class="testimonial-two__content">
+                        <div class="section-title">
+                            <div class="section-title__tagline">
+                                <span class="left"></span>
+                                <h4>Our Testimonials</h4>
+                            </div>
+                            <h2 class="section-title__title">What Our Client’s<br>Say About Us</h2>
+                        </div>
+                        <owl-carousel-o [options]="settings" class="testimonial-two__carousel owl-dot-type1 style2">
+                            <!-- Data -->
+                            <ng-container *ngFor="let item of testimonials">
+                                <ng-template carouselSlide>
+                                    <!--Start Testimonial One Single-->
+                                    <div class="testimonial-two__single">
+                                        <div class="testimonial-two__single-quote-icon">
+                                            <span class="icon-right-quotation-mark"></span>
+                                        </div>
+                                        <p class="testimonial-two__single-text1">{{item.comment | slice:0:120}}</p>
+                                        <p class="testimonial-two__single-text2">{{item.comment | slice:0:80}}</p>
+                                        <div class="testimonial-two__client-info"
+                                            *ngFor="let author of getAuthor(item.author)">
+                                            <div class="icon">
+                                                <span class="icon-right-quotation-mark"></span>
+                                            </div>
+                                            <div class="title">
+                                                <h4>{{author.name}}</h4>
+                                                <p>{{author.post}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Testimonial One Single-->
+                                </ng-template>
+                            </ng-container>
+                            <!-- Data -->
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            </div>
+            <!--End Testimonial Two Right-->
+        </div>
+    </div>
+</section>

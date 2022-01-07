@@ -1,0 +1,30 @@
+<section class="working-process-one">
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="section-title__tagline">
+                <span class="left"></span>
+                <h4>Working Process</h4><span class="right"></span>
+            </div>
+            <h2 class="section-title__title">We Follw Some Steps To<br>Grow Business</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="working-process-one__wrapper">
+                    <div class="working-process-one__shape"><img src="assets/images/shapes/working-process-v1-shape1.png" alt="img" /></div>
+                    <ul class="list-unstyled">
+                        <!--Start Working Process One Single-->
+                        <li class="working-process-one__single text-center" [ngClass]="item.extclass" *ngFor="let item of workprocess;let i = index">
+                            <div class="working-process-one__single-icon">
+                                <span [class]="item.icon"></span>
+                                <div class="count-box"></div>
+                            </div>
+                            <h3 class="working-process-one__single-title"><a routerLink="/about">{{item.title}}</a></h3>
+                            <p class="working-process-one__single-text">{{item.text}}</p>
+                        </li>
+                        <!--End Working Process One Single-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

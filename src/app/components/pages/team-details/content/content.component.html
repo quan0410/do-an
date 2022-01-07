@@ -1,0 +1,71 @@
+<section class="team-details-one" *ngFor="let item of teamdetails">
+    <div class="container">
+        <div class="row">
+            <!--Start Team Details One Left-->
+            <div class="col-xl-6">
+                <div class="team-details-one__left">
+                    <div class="team-details-one__left-img">
+                        <img [src]="item.image" [alt]="item.name" class="w-100" />
+                    </div>
+                    <div class="team-details-one__left-title text-center">
+                        <h2><a routerLink="/team-details/{{item.id}}">{{item.name}}</a></h2>
+                        <p>{{item.post}}</p>
+                        <ul class="social-icon list-unstyled">
+                            <!-- Data -->
+                            <li *ngFor="let social of item.social">
+                                <a routerLink="{{social.url}}"><i [class]="social.icon" aria-hidden="true"></i></a>
+                            </li>
+                            <!-- Data -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--End Team Details One Left-->
+            <!--Start Team Details One Right-->
+            <div class="col-xl-6">
+                <div class="team-details-one__right">
+                    <div class="team-details-one__right-top-text">
+                        <h2>Information</h2>
+                        <p>{{item.information}}</p>
+                    </div>
+                    <div class="team-details-one__right-bottom">
+                        <div class="title">
+                            <h3>Best Skills</h3>
+                            <p>Accusant doloremque laudantium totam aperiam eaque ipsa quae abillo inventore
+                                verite</p>
+                        </div>
+                        <div class="progress-box">
+                            <div class="row">
+                                <!-- Data -->
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" *ngFor="let skill of item.skills">
+                                    <div class="progress-block style2">
+                                        <div class="inner-box">
+                                            <div class="graph-outer">
+                                                <circle-progress [percent]="skill.value" [radius]="100"
+                                                    [outerStrokeWidth]="12" [innerStrokeWidth]="12"
+                                                    [outerStrokeColor]="'#f94d1c'" [innerStrokeColor]="'#feede8'"
+                                                    [animation]="true" [animationDuration]="300" [responsive]="true"
+                                                    [space]="-10" [showTitle]="false" [showUnits]="false"
+                                                    [showSubtitle]="false" [outerStrokeLinecap]="'butt'">
+                                                </circle-progress>
+                                                <div class="inner-text count-box">
+                                                    <span class="count-text" [countUp]="skill.value">0</span>
+                                                    <span class="count-Parsent">%</span>
+                                                </div>
+                                                <div class="title">
+                                                    <h5>{{skill.title}}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Team Details One Right-->
+        </div>
+    </div>
+</section>

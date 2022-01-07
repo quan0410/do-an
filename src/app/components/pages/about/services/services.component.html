@@ -1,0 +1,31 @@
+<section class="features-three features-three--about" [style.background-image]="'url(assets/images/backgrounds/features-three--about-bg.png)'">
+    <div class="features-three__content-box">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="section-title__tagline">
+                    <span class="left"></span>
+                    <h4>How Can Help You</h4><span class="right"></span>
+                </div>
+                <h2 class="section-title__title">Most Trending Marketing<br>Consulting Topic</h2>
+            </div>
+            <div class="row">
+                <!--Start Single Features Three-->
+                <div class="col-xl-3 col-lg-3 col-md-6" *ngFor="let item of serviceblock | slice:0:4">
+                    <div class="features-three__single text-center">
+                        <div class="layer-outer" [style.background-image]="'url('+item.image+')'">
+                        </div>
+                        <div class="features-three__single-icon">
+                            <img [src]="item.icon" [alt]="item.title" />
+                        </div>
+                        <h4 class="features-three__single-title"><a routerLink="/service-details/{{item.id}}">{{item.title}}</a></h4>
+                        <p class="features-three__single-text">{{item.shorttext | slice:0:60}}</p>
+                        <div class="features-three__single-btn">
+                            <a routerLink="/service-details/{{item.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Features Three-->
+            </div>
+        </div>
+    </div>
+</section>

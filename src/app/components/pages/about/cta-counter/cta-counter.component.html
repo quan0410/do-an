@@ -1,0 +1,53 @@
+<section class="counter-one counter-one--counter-three jarallax clearfix bg-fixed" [style.background-image]="'url(assets/images/backgrounds/counter-v3-bg.jpg)'">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="counter-one__wrapper clearfix">
+                    <div class="row">
+                        <!--Start Counter One Single-->
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12" *ngFor="let item of counter | slice:0:3">
+                            <div class="counter-one__single">
+                                <div class="counter-one__single-icon">
+                                    <img [src]="item.icon" [alt]="item.title" />
+                                </div>
+                                <div class="counter-one__outer">
+                                    <div class="counter-one__box">
+                                        <h2 class="counter-one__single-text">
+                                            <span class="odometer" [countUp]="item.value">0</span>
+                                            <span class="icon">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </span>
+                                        </h2>
+                                    </div>
+                                    <div class="counter-one__title">
+                                        <h6>{{item.title}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Counter One Single-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="counter-three__bottom">
+                        <div class="counter-three__bottom-text">
+                            <div class="section-title">
+                                <div class="section-title__tagline">
+                                    <span class="left"></span>
+                                    <h4>Request a Quote</h4>
+                                </div>
+                                <h2 class="section-title__title">Let’s Get To Work Together<br>Ready To Work Us
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="counter-three__bottom-btn">
+                            <a routerLink="/contact" class="thm-btn">Get Free Quote <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

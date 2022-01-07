@@ -1,0 +1,44 @@
+<div class="logo-box">
+    <a routerLink="/" aria-label="logo image"><img src="assets/images/resources/logo-1.png" width="155" alt="img" /></a>
+</div>
+<!-- /.logo-box -->
+<div class="mobile-nav__container">
+    <ul class="main-menu__list">
+        <li [ngClass]="item.child == true ? 'dropdown' : ''"
+            *ngFor="let item of navigation">
+            <a href="javascript:void(0)" (click)="trigger(item)" *ngIf="item.child" [ngClass]="item.open ? 'expanded' : ''">{{item.linkText}}<button aria-label="dropdown toggler" [ngClass]="item.open ? 'expanded' : ''"><i class="fa fa-angle-down"></i></button></a>
+            <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+            <ul class="sub-menu" *ngIf="item.child" [ngClass]="item.open ? 'd-block' : ''">
+                <li [ngClass]="item.child == true ? 'dropdown' : ''"
+                    *ngFor="let item of item.submenu">
+                    <a href="javascript:void(0)" (click)="trigger(item)" *ngIf="item.child" [ngClass]="item.open ? 'expanded' : ''">{{item.linkText}}<button aria-label="dropdown toggler" [ngClass]="item.open ? 'expanded' : ''"><i class="fa fa-angle-down"></i></button></a>
+                    <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                    <ul class="sub-menu" *ngIf="item.child" [ngClass]="item.open ? 'd-block' : ''">
+                        <li *ngFor="let item of item.submenu">
+                            <a routerLink="{{item.link}}">{{item.linkText}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!-- /.mobile-nav__container -->
+<ul class="mobile-nav__contact list-unstyled">
+    <li>
+        <i class="icon-phone-call"></i>
+        <a href="mailto:example@example.com">example@example.com</a>
+    </li>
+    <li>
+        <i class="icon-letter"></i>
+        <a href="tel:666-888-0000">666 888 0000</a>
+    </li>
+</ul><!-- /.mobile-nav__contact -->
+<div class="mobile-nav__top">
+    <div class="mobile-nav__social">
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-facebook-square"></a>
+        <a href="#" class="fab fa-pinterest-p"></a>
+        <a href="#" class="fab fa-instagram"></a>
+    </div><!-- /.mobile-nav__social -->
+</div><!-- /.mobile-nav__top -->

@@ -1,0 +1,19 @@
+<section class="contact-box">
+    <div class="container">
+        <div class="row">
+            <!--Start Contact Box Single-->
+            <div class="col-xl-4 col-lg-4" *ngFor="let item of contactinfo">
+                <div class="contact-box__single text-center" [ngClass]="item.style">
+                    <div class="contact-box__single-icon">
+                        <span [class]="item.icon"></span>
+                    </div>
+                    <div class="contact-box__single-text">
+                        <h2><a href="#">{{item.title}}</a></h2>
+                        <div [innerHtml]="item.text"></div>
+                    </div>
+                </div>
+            </div>
+            <!--End Contact Box Single-->
+        </div>
+    </div>
+</section>

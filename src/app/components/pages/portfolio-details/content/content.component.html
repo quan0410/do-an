@@ -1,0 +1,72 @@
+<section class="portfolio-details" *ngFor="let item of portfoliodetails">
+    <div class="container">
+        <div class="portfolio-details__gallery">
+            <div class="row">
+                <div class="col-lg-8">
+                    <figure>
+                        <a href="{{item.image}}" class="img-popup">
+                            <img [src]="item.image" [alt]="item.title">
+                        </a>
+                    </figure>
+                </div><!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="row">
+                        <!-- Data -->
+                        <div class="col-lg-12 col-md-6" *ngFor="let image of item.gallery">
+                            <figure>
+                                <a href="{{image}}" class="img-popup">
+                                    <img [src]="image" [alt]="item.title">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Data -->
+                        <!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.portfolio-gallery -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="portfolio-details__content">
+                    <h3 class="portfolio-details__content__title">{{item.title}}</h3>
+                    <!-- /.portfolio-details__content__title -->
+                    <div [innerHtml]="item.htmltext"></div>
+                </div><!-- /.portfolio-details__content -->
+            </div><!-- /.col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="portfolio-details__info">
+                    <h3 class="portfolio-details__info__title">Project Details</h3>
+                    <!-- /.portfolio-details__info__title -->
+                    <ul class="list-unstyled">
+                        <li *ngFor="let client of getClient(item.client)">
+                            <span>Client</span>
+                            <strong>{{client.name}}</strong>
+                        </li>
+                        <li>
+                            <span>Project</span>
+                            <strong>{{item.title}}</strong>
+                        </li>
+                        <li>
+                            <span>Category</span>
+                            <strong *ngFor="let cat of getCategories(item.category)">{{cat.title}}, </strong>
+                        </li>
+                        <li>
+                            <span>Date</span>
+                            <strong>{{item.projectdate}}</strong>
+                        </li>
+                        <li>
+                            <span>Share</span>
+                            <p class="social">
+                                <!-- Data -->
+                                <a href="javascript:void(0)" (click)="openSocialPopup(social)" *ngFor="let social of socialShare(item.title)">
+                                    <i [class]="social.iconClass"></i>
+                                </a>
+                                <!-- Data -->
+                            </p>
+                        </li>
+                    </ul><!-- /.list-unstyled -->
+                </div><!-- /.portfolio-details__info -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>

@@ -1,0 +1,153 @@
+<header class="main-header main-header--three  clearfix">
+    <div class="main-header-three__top main-header-four__top">
+        <div class="auto-container">
+            <div class="main-header-three__top-inner main-header-four__top-inner clearfix">
+                <div class="main-header-three__top-left main-header-four__top-left">
+                    <ul class="list-unstyled">
+                        <li>
+                            <div class="icon">
+                                <span class="icon-phone-call"></span>
+                            </div>
+                            <div class="text">
+                                <p>Free Quote : <a href="tel:01234789">+012 (34) 789</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="icon-envelope"></span>
+                            </div>
+                            <div class="text">
+                                <p>Email Address : <a href="mailto:example@example.com">example@example.com</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="icon-clock"></span>
+                            </div>
+                            <div class="text">
+                                <p>Woking Hour : <span>09 am - 08 pm</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main-header-three__top-right main-header-four__top-right">
+                    <div class="search-box-two">
+                        <span>Search</span>
+                        <a href="javascript:void(0)" class="main-menu__search search-toggler icon-search"
+                            (click)="toggleSearch()"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-header-three__bottom main-header-four__bottom">
+        <div class="auto-container">
+            <div class="main-header-three__bottom-inner main-header-four__bottom-inner clearfix">
+                <nav class="main-menu main-menu--1">
+                    <!-- menu -->
+                    <div class="main-menu__inner">
+                        <div class="left">
+                            <div class="logo-box3 logo-box3--style2">
+                                <a routerLink="/">
+                                    <img src="assets/images/resources/logo-3.png" alt="img">
+                                </a>
+                            </div>
+                            <a href="javascript:void(0)" class="mobile-nav__toggler" (click)="toggleNav()"><i
+                                    class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li [ngClass]="item.child === true ? 'dropdown' : ''" *ngFor="let item of navigation">
+                                    <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                            class="nav_arrow"></span></a>
+                                    <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                                    <ul class="sub-menu" *ngIf="item.child">
+                                        <li [ngClass]="item.child === true ? 'dropdown' : ''"
+                                            *ngFor="let item of item.submenu">
+                                            <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                                    class="nav_arrow"></span></a>
+                                            <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                                            <ul class="sub-menu" *ngIf="item.child">
+                                                <li *ngFor="let item of item.submenu">
+                                                    <a routerLink="{{item.link}}">{{item.linkText}}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-header-four__bottom_right">
+                            <div class="main-menu__right">
+                                <div class="btn-box">
+                                    <a routerLink="/contact" class="thm-btn">Free Consultation <i
+                                            class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- menu -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="stricky-header stricky-header--style4 stricked-menu main-menu" [ngClass]="windowScrolled ? 'stricky-fixed':''">
+    <div class="sticky-header__content">
+        <!-- menu -->
+        <div class="main-menu__inner">
+            <div class="left">
+                <div class="logo-box3 logo-box3--style2">
+                    <a routerLink="/">
+                        <img src="assets/images/resources/logo-3.png" alt="img">
+                    </a>
+                </div>
+                <a href="javascript:void(0)" class="mobile-nav__toggler" (click)="toggleNav()"><i
+                        class="fa fa-bars"></i></a>
+                <ul class="main-menu__list">
+                    <li [ngClass]="item.child === true ? 'dropdown' : ''" *ngFor="let item of navigation">
+                        <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                class="nav_arrow"></span></a>
+                        <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                        <ul class="sub-menu" *ngIf="item.child">
+                            <li [ngClass]="item.child === true ? 'dropdown' : ''" *ngFor="let item of item.submenu">
+                                <a href="javascript:void(0)" *ngIf="item.child">{{item.linkText}}<span
+                                        class="nav_arrow"></span></a>
+                                <a routerLink="{{item.link}}" *ngIf="!item.child">{{item.linkText}}</a>
+                                <ul class="sub-menu" *ngIf="item.child">
+                                    <li *ngFor="let item of item.submenu">
+                                        <a routerLink="{{item.link}}">{{item.linkText}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-header-four__bottom_right">
+                <div class="main-menu__right">
+                    <div class="btn-box">
+                        <a routerLink="/contact" class="thm-btn">Free Consultation <i class="fa fa-angle-double-right"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu -->
+    </div><!-- /.sticky-header__content -->
+</div><!-- /.stricky-header -->
+<!-- Search -->
+<div class="search-popup" [ngClass]="searchMethod ? 'active' : ''">
+    <div class="search-popup__overlay search-toggler" (click)="toggleSearch()"></div>
+    <app-search class="search-popup__content"></app-search>
+</div>
+<!-- Search -->
+<!-- Mobilemenu -->
+<div class="mobile-nav__wrapper" [ngClass]="navmethod ? 'expanded' : ''">
+    <div class="mobile-nav__overlay mobile-nav__toggler" (click)="toggleNav()"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler" (click)="toggleNav()"><i class="fa fa-times"></i></span>
+        <app-mobile-menu></app-mobile-menu>
+    </div>
+    <!-- /.mobile-nav__content -->
+</div>
+<!-- Mobilemenu -->

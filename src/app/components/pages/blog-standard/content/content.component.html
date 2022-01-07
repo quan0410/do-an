@@ -1,0 +1,116 @@
+<section class="blog-standard-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <div class="blog-standard-one__left">
+                    <!--Start Single Blog Standard One-->
+                    <div *ngFor="let item of blogpost | paginate: { itemsPerPage: 2, currentPage: page }">
+                        <div class="blog-standard-one__single" *ngIf="item.format === 'standard' || item.format === ''">
+                            <div class="blog-standard-one__single-img">
+                                <img [src]="item.image[0]" [alt]="item.title" />
+                            </div>
+                            <ul class="meta-info list-unstyled">
+                                <li>
+                                    <a routerLink="/blog/author/{{author.id}}" *ngFor="let author of getAuthor(item.author)">
+                                        <i class="fa fa-user" aria-hidden="true"></i>{{author.name}}
+                                    </a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-calendar" aria-hidden="true"></i>{{item.postdate}}</a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-comments" aria-hidden="true"></i>Comments ({{item.reviews.length}})</a>
+                                </li>
+                            </ul>
+                            <h2 class="blog-standard-one__single-title"><a routerLink="/blog-details/{{item.id}}">{{item.title}}</a></h2>
+                            <p class="blog-standard-one__single-text">{{item.shorttext}}</p>
+                            <div class="blog-standard-one__single-btn">
+                                <a routerLink="/blog-details/{{item.id}}" class="thm-btn">Learn More<i class="fa fa-angle-double-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <!--End Single Blog Standard One-->
+                        <!--Start Single Blog Standard One-->
+                        <div class="blog-standard-one__single" *ngIf="item.format === 'video' && item.video != ''">
+                            <div class="blog-standard-one__single-img style2">
+                                <img [src]="item.image[0]" [alt]="item.title" />
+                                <div class="video-box">
+                                    <a class="video-popup" [title]="item.title" href="{{item.video}}">
+                                        <i class="fa fa-play" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="meta-info list-unstyled">
+                                <li>
+                                    <a routerLink="/blog/author/{{author.id}}" *ngFor="let author of getAuthor(item.author)">
+                                        <i class="fa fa-user" aria-hidden="true"></i>{{author.name}}
+                                    </a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-calendar" aria-hidden="true"></i>{{item.postdate}}</a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-comments" aria-hidden="true"></i>Comments ({{item.reviews.length}})</a>
+                                </li>
+                            </ul>
+                            <h2 class="blog-standard-one__single-title"><a routerLink="/blog-details/{{item.id}}">{{item.title}}</a></h2>
+                            <p class="blog-standard-one__single-text">{{item.shorttext}}</p>
+                            <div class="blog-standard-one__single-btn">
+                                <a routerLink="/blog-details/{{item.id}}" class="thm-btn">Learn More<i class="fa fa-angle-double-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <!--End Single Blog Standard One-->
+                        <!--Start Single Blog Standard One-->
+                        <div class="blog-standard-one__single blog-standard-one__single-style2" *ngIf="item.format === 'no-thumb'">
+                            <ul class="meta-info list-unstyled">
+                                <li>
+                                    <a routerLink="/blog/author/{{author.id}}" *ngFor="let author of getAuthor(item.author)">
+                                        <i class="fa fa-user" aria-hidden="true"></i>{{author.name}}
+                                    </a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-calendar" aria-hidden="true"></i>{{item.postdate}}</a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-comments" aria-hidden="true"></i>Comments ({{item.reviews.length}})</a>
+                                </li>
+                            </ul>
+                            <h2 class="blog-standard-one__single-title"><a routerLink="/blog-details/{{item.id}}">{{item.title}}</a></h2>
+                            <p class="blog-standard-one__single-text">{{item.shorttext}}</p>
+                            <div class="blog-standard-one__single-btn">
+                                <a routerLink="/blog-details/{{item.id}}" class="thm-btn">Learn More<i class="fa fa-angle-double-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <!--End Single Blog Standard One-->
+                        <!--Start Single Blog Standard One-->
+                        <div class="blog-standard-one__single blog-standard-one__single-style3"
+                            [style.background-image]="'url('+item.image[0]+')'" *ngIf="item.format === 'thumb-bg'">
+                            <ul class="meta-info list-unstyled">
+                                <li>
+                                    <a routerLink="/blog/author/{{author.id}}" *ngFor="let author of getAuthor(item.author)">
+                                        <i class="fa fa-user" aria-hidden="true"></i>{{author.name}}
+                                    </a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-calendar" aria-hidden="true"></i>{{item.postdate}}</a>
+                                </li>
+                                <li><a routerLink="/blog-details/{{item.id}}"><i class="fa fa-comments" aria-hidden="true"></i>Comments ({{item.reviews.length}})</a>
+                                </li>
+                            </ul>
+                            <h2 class="blog-standard-one__single-title"><a routerLink="/blog-details/{{item.id}}">{{item.title}}</a></h2>
+                            <div class="blog-standard-one__single-btn-style2">
+                                <a routerLink="/blog-details/{{item.id}}" class="thm-btn">Learn More<i class="fa fa-angle-double-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Blog Standard One-->
+                </div>
+                <!-- Pagination Start -->
+                <pagination-controls (pageChange)="page = $event" responsive="true" previousLabel="<" nextLabel=">">
+                </pagination-controls>
+                <!-- Pagination End -->
+            </div>
+            <!--Start Sidebar-->
+            <div class="col-xl-4 col-lg-5">
+                <app-blog-sidebar></app-blog-sidebar>
+            </div>
+            <!--End Sidebar-->
+        </div>
+    </div>
+</section>
